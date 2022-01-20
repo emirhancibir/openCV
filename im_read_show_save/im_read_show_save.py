@@ -2,7 +2,7 @@ import cv2.cv2 as cv2
 
 img = cv2.imread("lena.jpg")
 """
-ilk parametre dosya yolunu uzantısı ile birlikte, ikinci parametre resimi nasıl okuyacagini belirtmek icin 
+ilk parametre dosya yolunu uzantısı ile birlikte, ikinci parametre resimi nasıl okuyacagini belirtmek icin
 kullanilir cv2.IMREAD_GRAYSCALE gibi
 """
 

@@ -3,8 +3,8 @@ import numpy as np
 
 cap = cv2.VideoCapture(0)
 
-x_range = np.arange(305, 346, 1)
-y_range = np.arange(225, 256, 1)
+x_range = np.arange(320, 326, 1)
+y_range = np.arange(235, 246, 1)
 # print(y_range[:])
 
 while True:
@@ -16,7 +16,11 @@ while True:
     lower_blue = np.array([120 - sensitivity, 100, 100])
     upper_blue = np.array([120 + sensitivity, 255, 255])
 
+    kernel = np.ones((5, 5), np.uint8)
+
     mask = cv2.inRange(hsv_img, lower_blue, upper_blue)
+    #yumusatma
+    mask = cv2.erode(mask,kernel)
     # res = cv2.bitwise_and(frame, frame, mask=mask)
 
     _, thresh = cv2.threshold(mask, 127, 255, cv2.THRESH_BINARY)

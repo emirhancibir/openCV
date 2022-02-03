@@ -20,3 +20,8 @@ cv2.imshow("centroid", img)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+"""
+src
+https://docs.opencv.org/4.x/dd/d49/tutorial_py_contour_features.html
+"""

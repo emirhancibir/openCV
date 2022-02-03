@@ -61,12 +61,15 @@ while True:
     lower_blue = np.array([120 - sensitivity, 100, 100])
     upper_blue = np.array([120 + sensitivity, 255, 255])
 
-    kernel = np.ones((5, 5), np.uint8)
+    kernel = np.ones((3, 3), np.uint8)
 
     # mask = cv2.inRange(hsv_img, lower_blue, upper_blue)
 
     # yumusatma
-    mask = cv2.erode(mask, kernel)
+    # erozyon ile
+    # mask = cv2.erode(mask, kernel)
+    # opening ile
+    mask = cv2.morphologyEx(mask,cv2.MORPH_OPEN,kernel)
     cv2.imshow("mask", mask)
 
 

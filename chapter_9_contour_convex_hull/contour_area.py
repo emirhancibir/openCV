@@ -11,9 +11,11 @@ contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 cnt = contours[0]
 area = cv2.contourArea(cnt)
 print(area)
+
 # moments ile alan
 M = cv2.moments(cnt)
 print(M["m00"])
+
 # triangle img perimeter
 perimeter = cv2.arcLength(cnt, True)
 print(perimeter)

@@ -69,10 +69,8 @@ while True:
     # erozyon ile
     # mask = cv2.erode(mask, kernel)
     # opening ile
-    mask = cv2.morphologyEx(mask,cv2.MORPH_OPEN,kernel)
+    mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
     cv2.imshow("mask", mask)
-
-
 
     M = cv2.moments(mask)
 
@@ -88,7 +86,7 @@ while True:
     # koordinat ekseni
     cv2.line(frame, (320, 0), (320, 480), (255, 0, 0), 4)
     cv2.line(frame, (0, 240), (640, 240), (255, 0, 0), 4)
-    # center black circle
+    # center green circle
     cv2.circle(frame, (320, 240), 40, (0, 255, 0), 3)
 
     X = int(M["m10"] / M["m00"])
@@ -98,6 +96,8 @@ while True:
         # object track circle
         cv2.circle(frame, (X, Y), 40, (0, 0, 255), 5)
         cv2.line(frame, (X, Y), (320, 240), (0, 0, 255), 3)
+
+
         # origin = (320,240)
         # print(X, "\n", Y)
 
@@ -117,5 +117,3 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
-
-

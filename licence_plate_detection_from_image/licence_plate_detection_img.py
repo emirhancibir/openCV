@@ -8,6 +8,7 @@ import imutils
 img = cv2.imread("licence_plate2.png")
 
 
+
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # smoothing
@@ -16,7 +17,7 @@ filter = cv2.bilateralFilter(gray_img, 6, 250, 250)  # 6,250,250
  cv2.bilateralFilter() is highly effective in noise removal while keeping edges sharp.
  """
 # find edges
-edged = cv2.Canny(filter, 80, 200)
+edged = cv2.Canny(filter, 50, 200)
 # find contours
 contours = cv2.findContours(edged, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 cnts = imutils.grab_contours(contours)
